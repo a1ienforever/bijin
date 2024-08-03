@@ -22,7 +22,7 @@
         </tr>
         </thead>
         <tbody>
-        {% for tr in trs %}
+        {% for tr in products %}
         <tr>
             <td><a href="">{{ tr.model.num }}</a></td>
             <td>{{ tr.model.name }}</td>
@@ -36,10 +36,6 @@
         </tbody>
     </table>
 </div>
-<div id="button-block">
-    <a class="btn" href="{% url 'newcard' %}">Новая карточка</a>
-    <a class="btn" href="{% url 'addproduct' %}">Добавить товар</a>
-    <a class="btn" href="{% url 'shipment' %}">Отгрузка товара</a>
-</div>
+
 {% endblock %}
 

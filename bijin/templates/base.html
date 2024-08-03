@@ -1,18 +1,34 @@
 {% load static %}
 {% load bijin_tags %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{ title }}</title>
     <link type="text/css" href="{% static 'inventory_system/css/style.css' %}" rel="stylesheet"/>
+    <link type="text/css" href="{% static 'inventory_system/css/card-style.css' %}" rel="stylesheet"/>
 </head>
 <body>
 <div id="main">
+    <div class="header">
+    <a href="{% url 'menu'%}" class="btn-menu">Меню</a>
+    <div class="title" style="height: 50px;">
+
+        <h1>{{title}}</h1>
+    </div>
+    </div>
     {% block content %}
     {% endblock %}
+
+    <div id="button-block">
+        <a class="btn" href="{% url '' %}">Список</a>
+        <a class="btn" href="{% url 'newcard' %}">Новая карточка</a>
+        <a class="btn" href="{% url 'addproduct' %}">Добавить товар</a>
+        <a class="btn" href="{% url 'shipment' %}">Отгрузка товара</a>
+        <a class="btn" href="{% url 'cards' %}">Карточки</a>
+    </div>
 </div>
 </body>
 </html>
